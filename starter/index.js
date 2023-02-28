@@ -30,8 +30,8 @@ inquirer
     },
     {
       type: 'list',
-      message: 'What licence are you using?',
-      name: 'licence',
+      message: 'What license are you using?',
+      name: 'license',
       choices: ['MIT', 'other1', 'telekinesis'],
     },
     {
@@ -39,12 +39,18 @@ inquirer
       name: 'tests',
       message: 'How do you test your project?',
     },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'Please add your email address: ',
+      },
    
   ])
   .then((data) => {
-    console.log("The title of your project is ", data.title);
-    const filename = "readme.md";
+    
+    const filename = "README.md";
     const markdown = markdownGenerator.generateMarkdown(data);
+ 
     fs.writeFile(filename, markdown, (err) =>
       err ? console.log(err) : console.log('Success!')
     );
