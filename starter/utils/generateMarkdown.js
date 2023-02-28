@@ -18,6 +18,7 @@ function generateMarkdown(data) {
   
     ## Usage
     ${data.usage}
+    ![video](./assets/video.mp4)
   
     ## License
     ${data.license}
@@ -28,6 +29,7 @@ function generateMarkdown(data) {
     ## Questions
     Contact the developer with any questions at <${data.email}>;
     `
+
     if (data.license == 'MIT') {
     return `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`
     } else {
